@@ -1,6 +1,6 @@
 'use strict';
 
-import { Promise } from 'es6-promise';
+//import { Promise } from 'es6-promise';
 import assign from 'object-assign';
 
 var _callbacks = [];

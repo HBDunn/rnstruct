@@ -1,10 +1,6 @@
 'use strict';
-
-import React, {
-  StyleSheet,
-  Text,
-  View,
-  TouchableHighlight,
+import React from 'react';
+import { StyleSheet, Text, View, TouchableHighlight,
   TouchableOpacity
 } from 'react-native';
 

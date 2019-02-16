@@ -1,6 +1,6 @@
 'use strict';
 
-import keyMirror from 'keymirror';
+import keyMirror from '../../utils/keyMirror';
 
 export default keyMirror({
   KEY_TYPED: null,

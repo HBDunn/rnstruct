@@ -1,12 +1,13 @@
 'use strict';
 
-import { EventEmitter } from 'events';
+import EventEmitter  from 'eventemitter3';
 import assign from 'object-assign';
-import uniqid from 'uniqid';
+import uuid from 'uuid';
 import {AppDispatcher} from '../dispatcher/AppDispatcher';
 import CalculatorConstants from '../constants/CalculatorConstants';
+const eventEmitter = new EventEmitter();
 
-var CHANGE_EVENT = 'change';
+const CHANGE_EVENT = 'change';
 
 var _signKeyTyped = null;
 var _symbolKeyTyped = null;
@@ -20,11 +21,10 @@ var _numbersFromBuffer = [];
 var _lastCalculation = {};
 var _lastPressedWasEqual = false;
 
-var CalculatorStore = assign({}, EventEmitter.prototype, {
+var CalculatorStore = assign({}, eventEmitter.prototype, {
 
   getDisplayScreen: function() {
     if(_displayScreen.toString().length >= _totalNumberOfDigits) {
-      // console.log('display filter', _displayScreen.toString());
       return parseFloat(_displayScreen).toExponential(_exponentialNumberOfDigits);
     }
     return _displayScreen;
@@ -42,14 +42,15 @@ var CalculatorStore = assign({}, EventEmitter.prototype, {
   },
 
   emitChange: function() {
-    this.emit(CHANGE_EVENT);
+    eventEmitter.emit(CHANGE_EVENT);
   },
 
   addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
+    eventEmitter.addListener(CHANGE_EVENT, callback);
   },
+
   removeChangeListener: function(callback) {
-    this.removeListener(CHANGE_EVENT, callback);
+    eventEmitter.removeListener(CHANGE_EVENT, callback);
   }
 });
 
@@ -261,7 +262,7 @@ function processCalculation() {
         _numbersFromBuffer[1] = _numbersFromBuffer[1].toExponential(_exponentialNumberOfDigits);
       }
       _displayFormulae.push({
-        id: uniqid(),
+        id: uuid(),
         literal: '' + _numbersFromBuffer[0].toString() + ' ' +
           _symbolKeyTyped + ' ' +  _numbersFromBuffer[1].toString(),
         operator: _signKeyTyped
