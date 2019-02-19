@@ -1,5 +1,5 @@
 'use strict';
-
+//test.skip('skip', () => {})
 jest.dontMock('../../../common/components/App.js');
 
 describe('App', function () {

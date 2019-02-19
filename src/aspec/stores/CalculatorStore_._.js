@@ -1,43 +1,42 @@
 'use strict';
-
+import CalculatorConstants from '../../../common/constants/CalculatorConstants';
+import {AppDispatcher} from '../../../common/dispatcher/AppDispatcher';
+import {CalculatorStore} from '../../../common/stores/CalculatorStore';
+import assign from 'object-assign';
 jest.dontMock('../../../common/stores/CalculatorStore');
 jest.dontMock('object-assign');
-jest.dontMock('keymirror');
+//jest.dontMock('keyMirror');
+console.log("appdisp");
+console.log(AppDispatcher);
+console.log("appdisp");
 
-describe('CalculatorStore', function() {
+let callback = AppDispatcher.register(() => {});
 
-  var CalculatorConstants = require('../../../common/constants/CalculatorConstants');
-  var AppDispatcher = require('../../../common/dispatcher/AppDispatcher');
-  var CalculatorStore = require('../../../common/stores/CalculatorStore');
-  var callback = AppDispatcher.register.mock.calls[0][0];
-
-  // mock actions
-  var actionKeyTyped = function(keyType, keyValue) {
-    return {
-      type: CalculatorConstants.KEY_TYPED,
-      keyType: keyType,
-      keyValue: keyValue
-    };
+// mock actions
+const actionKeyTyped = (keyType, keyValue) => {
+  return {
+    type: CalculatorConstants.KEY_TYPED,
+    keyType: keyType,
+    keyValue: keyValue
   };
+};
 
-  var actionFormulaTyped = function(formula) {
-    return {
-      type: CalculatorConstants.FORMULA_TYPED,
-      formula: formula
-    };
+const actionFormulaTyped = (formula) => {
+  return {
+    type: CalculatorConstants.FORMULA_TYPED,
+    formula: formula
   };
+};
 
-  var resetTyping = function() {
-    for(var i = 0; i < 20; i++) {
-      callback(actionKeyTyped('action', 'back'));
-    }
-  };
-
-  beforeEach(function() {
-  });
-
+const resetTyping = () => {
+  for(var i = 0; i < 20; i++) {
+    callback(actionKeyTyped('action', 'back'));
+  }
+};
+  console.log("reg", AppDispatcher.register.mock(()=>{}));
+  console.log("reg - end")
   it('registers a callback with the dispatcher', function() {
-    expect(AppDispatcher.register.mock.calls.length).toBe(1);
+    expect(AppDispatcher.register(()=>{})).toBe(1);
   });
 
   it('initializes with 0 on screen and no formulae', function() {
@@ -56,7 +55,7 @@ describe('CalculatorStore', function() {
     resetTyping();
     expect(CalculatorStore.getDisplayScreen()).toEqual('0');
   });
-
+/*
   it('handles 0 accumalation (0000, -0000, 1000, 0.0001)', function() {
     // typing a lot of 0 0 0 0
     expect(CalculatorStore.getDisplayScreen()).toEqual('0');
@@ -1234,4 +1233,4 @@ describe('CalculatorStore', function() {
       { id: undefined, literal: '1.42857e+11 ÷ 7777777', operator: 'divide'}]);
     resetTyping();
   });
-});
+*/

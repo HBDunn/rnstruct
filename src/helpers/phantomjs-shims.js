@@ -1,3 +1,4 @@
+test.skip('skip', () => {})
 (function() {
 
 var Ap = Array.prototype;
