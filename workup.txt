@@ -1,11 +1,24 @@
-#migrate
-#React from 'react'
-#events
-https://stackoverflow.com/questions/36774540/eventemitter-and-subscriber-es6-syntax-with-react-native
-import { EventEmitter } from 'EventEmitter';
-import { EventEmitter } from 'EventEmitter3';
-const EE = new EventEmitter();
-change this.on in prototype as this is not yet constucted no reference to this.prototype
+#Migrate from React-native 0.21
+>need a way-back machine..
+> easier to start over with ```npm i react-native``` 
+## Fixes
+
+* ```javascript
+	Import React from 'react'
+  ```
+###Events
+
+Replaced EventEmitter with [EventEmitter3]https://stackoverflow.com/questions/36774540/eventemitter-and-subscriber-es6-syntax-with-react-native
+```javascript
+	EventEmitter
+``` 
+>  ```javascript
+	  this.on
+   ``` 
+   in prototype as this is not yet constructed no reference to this.prototype
+* ```javascript
+	  import { EventEmitter } from 'EventEmitter3';
+  ```
 
 #uniqid
 https://www.npmjs.com/package/react-native-uuid
@@ -43,3 +56,24 @@ echo 'starting Nexus_5X_API_28_x86 - edit startemu28.sh to change'
 #Nexus_5X_API_27
 #Nexus_5X_API_28_x86
 `
+#tests
+#remove Phantom.shim.js
+#mock uuid
+https://github.com/facebook/jest/issues/2172
+::code
+
+` jest.mock("uuid/v4", () => {
+	let value = 0;
+	return () => value++;
+  });`
+
+ ::fix imports remove requires
+ ::set uuid sequencially from 0
+ :: match register to acctual and reset each time in beforeEach()
+ https://stackoverflow.com/questions/39321408/testing-react-flux-store-with-jest-in-es6
+ 
+#rename to action CalculatorActions 
+#snapshot and getBaseChildren for granular look at App View tests
+https://jestjs.io/docs/en/tutorial-react-native.html
+#rename files to .spec.js
+
