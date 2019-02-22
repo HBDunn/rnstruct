@@ -1,5 +1,8 @@
+
+
 Migrate to react-native 58.4 from rn 0.21
 =========================================
+
   **Version Date: 2/21/19**
   
   Verified on Android simulator using win7-64 and Android Studio w/ platform-tools 3.3 
@@ -95,6 +98,7 @@ scratch.
 	
   * bash
     ```netstat -bon | grep -C3 "node.exe"```
+	```taskkill //f //im "node.exe"``` then check no port 8081 ```netstat -bon | find "8081"```
 	
   * tasklist - with a | grep 
   * watch adb.exe too  
