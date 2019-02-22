@@ -1,8 +1,5 @@
 /**
 * https://github.com/facebook/react-native
-*
-* @format
-* @flow
 * @lint-ignore-every XPLATJSCOPYRIGHT1
 */
 'use strict';

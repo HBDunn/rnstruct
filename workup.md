@@ -17,7 +17,7 @@ Migrate to react-native 58.4 from rn 0.21
 ``` 
 
   Original [code] from Benoit Vallon.  
-  Modified and adapted to react-native@**58.4** and react@**16.3.3** by HDunn <hdunn@peswim.com>.  
+  Modified and adapted to react-native@**58.4** and react@**16.6.3** by HDunn <hdunn@peswim.com>.  
   MIT License.
 
 Structure
@@ -143,6 +143,34 @@ Tests
   * [Snapshot] and getBaseChildren for granular look at App View tests.
   * Rename files to .spec.js - optional
 
+  
+  
+Typescript
+==========
+only for react not rn
+https://github.com/DefinitelyTyped/DefinitelyTyped/issues/29265
+Start
+-----
+
+```npm i -D typescript react-native-typescript-transformer @types/react @types/react-native```  
+
+```tsc --init --pretty --jsx react```  
+
+###tsconfig
+
+use:
+https://github.com/Microsoft/TypeScript-React-Native-Starter/blob/master/ExampleProject/tsconfig.json
+
+modify:
+libs:["2015"]
+https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26218
+
+Jest
+====
+
+// Note: test renderer must be required after react-native.
+import renderer from 'react-test-renderer';
+  
 refs:
 
 [code]: https://github.com/benoitvallon/react-native-nw-react-calculator
