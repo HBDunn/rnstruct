@@ -143,8 +143,7 @@ Tests
   * [Snapshot] and getBaseChildren for granular look at App View tests.
   * Rename files to .spec.js - optional
 
-  
-  
+
 Typescript
 ==========
 only for react not rn
@@ -152,7 +151,9 @@ https://github.com/DefinitelyTyped/DefinitelyTyped/issues/29265
 Start
 -----
 
-```npm i -D typescript react-native-typescript-transformer @types/react @types/react-native```  
+```npm i -D typescript react-native-typescript-transformer @types/react @types/react-native``` 
+npm install --save-dev @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread
+ 
 
 ```tsc --init --pretty --jsx react```  
 
@@ -171,6 +172,23 @@ Jest
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
   
+
+WEB-REACT
+=========
+
+Next level
+ 
+webpack
+-------  
+npm webpack-cli webpack webpack-dev-server
+
+###fails react-native
+filtering test with regex ```/^(?!.*\..*\.(js.?)$)(.*\.js.?)$ /```
+skips .native.js(x) and .android.js(x), but webpack still fails on compile of react-native
+
+try - fixing compile
+
+
 refs:
 
 [code]: https://github.com/benoitvallon/react-native-nw-react-calculator
