@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  className="main"
+>
+  <div
+    className="screen"
+  >
+    "SHOULD BE NOTHING"
+  </div>
+  <div
+    className="formulae"
+  />
+  <div
+    className="keyboard"
+  >
+    <div
+      className="keyboard-row"
+    >
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          1
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          2
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          3
+        </div>
+      </div>
+    </div>
+    <div
+      className="keyboard-row"
+    >
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          4
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          5
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          6
+        </div>
+      </div>
+    </div>
+    <div
+      className="keyboard-row"
+    >
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          7
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          8
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          9
+        </div>
+      </div>
+    </div>
+    <div
+      className="keyboard-row"
+    >
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          +/-
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="key key-number"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+      >
+        <div
+          className=""
+        >
+          .
+        </div>
+      </div>
+    </div>
+    <div
+      className="keyboard-row"
+    >
+      <div
+        className="key key-operator"
+      >
+        <div
+          className="operator divide"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+        >
+          ÷
+        </div>
+      </div>
+      <div
+        className="key key-operator"
+      >
+        <div
+          className="operator substract"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+        >
+          -
+        </div>
+      </div>
+      <div
+        className="key key-operator"
+      >
+        <div
+          className="operator add"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+        >
+          +
+        </div>
+      </div>
+      <div
+        className="key key-operator"
+      >
+        <div
+          className="operator multiply"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+        >
+          x
+        </div>
+      </div>
+    </div>
+    <div
+      className="keyboard-row"
+    >
+      <div
+        className="key key-action"
+      >
+        <div
+          className="action back"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+        >
+          &lt;&lt;
+        </div>
+      </div>
+      <div
+        className="key key-action"
+      >
+        <div
+          className="action equal"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+        >
+          =
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -177,16 +177,19 @@ WEB-REACT
 =========
 
 Next level
- 
-webpack
--------  
+
+Webpack
+-------
+
+Big Foul-up
+-----------
+
+Screen.js had debug reference to react-native DOOH!
+
+  
 npm webpack-cli webpack webpack-dev-server
 
-###fails react-native
-filtering test with regex ```/^(?!.*\..*\.(js.?)$)(.*\.js.?)$ /```
-skips .native.js(x) and .android.js(x), but webpack still fails on compile of react-native
-
-try - fixing compile
+[Trials and Errors][./cleaning.md]
 
 
 refs:

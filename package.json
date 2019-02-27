@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "check": "installed-check",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "web-dev": "webpack-dev-server --config ./webpack.config.js  --hot --progress --colors --mode development"
@@ -11,11 +10,11 @@
   "dependencies": {
     "buffer": "^5.2.1",
     "eventemitter3": "^3.1.0",
-    "object-assign": "^4.1.1",
     "react": "16.6.3",
     "react-dom": "^16.6.3",
     "react-native": "0.58.4",
     "react-native-uuid": "^1.4.9",
+    "upath": "^1.1.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
@@ -34,7 +33,8 @@
     "clean-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "24.1.0",
-    "metro-react-native-babel-preset": "0.51.1",
+    "metro-react-native-babel-preset": "^0.51.1",
+    "mini-css-extract-plugin": "^0.5.0",
     "react-native-typescript-transformer": "^1.2.11",
     "react-test-renderer": "16.6.3",
     "schedule": "^0.5.0",
@@ -45,10 +45,12 @@
     "typescript": "^3.3.3333",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.0"
+    "webpack-dev-server": "^3.2.1"
   },
   "jest": {
-    "preset": "react-native",
-    "verbose": true
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js)$",
+    "moduleFileExtensions": [
+      "js"
+    ]
   }
 }
