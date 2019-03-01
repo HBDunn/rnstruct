@@ -1,9 +1,15 @@
+                            **NOT react-native-web**
+====================================================
 
+REACT + REACT-NATIVE + WEBPACK
+==============================
+
+USE: npm **ci** to install from lock file NOT npm i 
 
 Migrate to react-native 58.4 from rn 0.21
 =========================================
 
-  **Version Date: 2/21/19**
+  **Version Date: 2/28/19**
   
   Verified on Android simulator using win7-64 and Android Studio w/ platform-tools 3.3 
   compiling to version 28.0.3  on Nexus_5X_API_28_x86 avd simulator.  
@@ -69,11 +75,11 @@ TLDR: ```npm start```  then in separate terminal from root dir ```react-native r
 
 ###Buffer
 
-  You need to add "buffer" to your package.json dependencies. There's some issues w/ recursive dependencies  
+  Needed to add "buffer" to your package.json dependencies. There's some issues w/ recursive dependencies  
   not being resolved with *npm* so you need to resolve them yourself.
 
-Speed-Up Development
-====================
+Speed-Up Migration
+==================
 cmd-line emulator 
 -----------------
 
@@ -87,6 +93,9 @@ Avoid "Red-Blocks" on Android
 In general found that using ```npm start``` in a separate terminal did not fail nearly as much when only running ```react-native run-android```.  Apparently
 there is a different start-up used in the react-native scripts, which makes it hard to change imports and dependencies without killing all terminals and starting from  
 scratch. 
+
+Clearing cache and Hast-map "react-native run-android"  and/or  "react-native run-android -- --reset-cache" is also ok just monitor 8080 + (8081 etc) ports with netstat
+to keep node.exe and 808? ports available. 
 
 ###checking on server state - requires elevation
 
@@ -146,52 +155,42 @@ Tests
 
 Typescript
 ==========
-only for react not rn
-https://github.com/DefinitelyTyped/DefinitelyTyped/issues/29265
+only for react not [rn](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/29265)
+
 Start
 -----
 
-```npm i -D typescript react-native-typescript-transformer @types/react @types/react-native``` 
-npm install --save-dev @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread
+  ```npm i -D typescript react-native-typescript-transformer @types/react @types/react-native``` 
+  npm install --save-dev @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread
  
-
-```tsc --init --pretty --jsx react```  
+  ```tsc --init --pretty --jsx react```  
 
 ###tsconfig
 
-use:
-https://github.com/Microsoft/TypeScript-React-Native-Starter/blob/master/ExampleProject/tsconfig.json
+  use: [tsconfig.js](https://github.com/Microsoft/TypeScript-React-Native-Starter/blob/master/ExampleProject/tsconfig.json)
 
-modify:
-libs:["2015"]
-https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26218
+  modify:
+   libs:["2015"](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26218)
 
 Jest
 ====
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+  // Note: test renderer must be required after react-native.
+  import renderer from 'react-test-renderer';
   
+WEBPABK & REACT
+---------------
 
-WEB-REACT
-=========
+###Webpack Setup
 
-Next level
+  [Forked Trials and Errors](./cleaing.md)
 
-Webpack
--------
+###Big Foul-up
 
-Big Foul-up
------------
+  * Screen.js had debug reference to react-native DOOH!
+  * npm webpack-cli webpack webpack-dev-server
 
-Screen.js had debug reference to react-native DOOH!
-
-  
-npm webpack-cli webpack webpack-dev-server
-
-[Trials and Errors][./cleaning.md]
-
-
+ 
 refs:
 
 [code]: https://github.com/benoitvallon/react-native-nw-react-calculator

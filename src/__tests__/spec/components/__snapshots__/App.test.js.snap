@@ -7,7 +7,7 @@ exports[`should match snapshot 1`] = `
   <div
     className="screen"
   >
-    "SHOULD BE NOTHING"
+    0
   </div>
   <div
     className="formulae"

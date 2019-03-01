@@ -1,8 +1,6 @@
 'use strict';
-
-import Render from './KeyboardRender';
-
 import { Component } from 'react';
+import Render from './KeyboardRender';
 
 export default class Keyboard extends Component {
   render () {
