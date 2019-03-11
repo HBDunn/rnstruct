@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "web-dev": "webpack-dev-server --config ./webpack.config.js  --hot --progress --colors --mode development"
+    "web-dev": "webpack-dev-server --config ./webpack.config.js  --hot --progress --colors --mode development",
+    "web": "tsc  &&  webpack --config ./webpack.config.js --progress --colors --mode production"
   },
   "dependencies": {
     "buffer": "^5.2.1",
