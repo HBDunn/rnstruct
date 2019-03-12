@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "types": "tsc --noEmit",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "web-dev": "webpack-dev-server --config ./webpack.config.js  --hot --progress --colors --mode development",
