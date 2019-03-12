@@ -24,16 +24,21 @@ module.exports = {
   },
   module: {
     rules: [
-		  {
-				test: /\.tsx?$/,
-				exclude: /node_modules/,
-				use: ['babel-loader','ts-loader']
-			},
       {
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				use: ['babel-loader']
-			},
+        test: /\.tsx?$/,
+        include: path.resolve(__dirname, 'src'),
+        use: [
+          'babel-loader',
+          'ts-loader'
+        ]
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          'babel-loader'
+        ]
+      },
 			{
 				// Preprocess our own .css files
         test: /\.(sa|sc|c)ss$/,
