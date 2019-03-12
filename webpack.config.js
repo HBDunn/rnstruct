@@ -18,7 +18,7 @@ module.exports = {
     path: path.resolve(__dirname,'dist')
   },
 	target:'web',
-  devtools: 'source-map',
+  devtool: 'source-map',
 	devServer: {
     contentBase: '/'
   },
@@ -27,7 +27,12 @@ module.exports = {
 		  {
 				test: /\.tsx?$/,
 				exclude: /node_modules/,
-				use: ['ts-loader']
+				use: ['babel-loader','ts-loader']
+			},
+      {
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				use: ['babel-loader']
 			},
 			{
 				// Preprocess our own .css files
