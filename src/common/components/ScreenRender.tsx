@@ -13,14 +13,7 @@ declare namespace JSX {
     div: {className:string};
   }
 }
-/*declare namespace JSX {
 
-   interface IntrinsicElements {
-       [elemName: string]: any;
-       div:{className:string};
-   }
-}*/
-//interface Render {}
 export default function ({},state:State): JSX.Element {
   return (
     <div className='screen'>

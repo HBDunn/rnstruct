@@ -1,7 +1,13 @@
-// Stiziles
+// Styles
+  /*
+    --deep-purple:#421C52;
+    --pink:#fb96cf;
+    --light-purple:#cb7dc9;
+    --coral:#ff6f61;
+  */
 
   html, body {
-  background: white;
+  background: #421C52;/*white*/
   }
 
   .calculator {
@@ -9,7 +15,7 @@
     background: blue;
   }
   .screen {
-    background-color: #68cef2;
+    background-color: #91A8D0;/*68cef2;*/
     color: #190d08;
     font-size: 50px;
     padding: 30px 10px;
@@ -48,6 +54,7 @@
   }
 
   .keyboard {
+    background: #ffe387;
     height: 300px;
   }
   .keyboard-row {
@@ -58,8 +65,9 @@
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    border-radius: 5px;
     padding: 10px 0;
-    font-weight: lighter;
+    font-weight: bolder;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -68,42 +76,44 @@
     transition: all 0.2s;
   }
   .key-number {
-    border: 1px solid #f8f8f8;
+    border: 1px solid #888888;
     width: 33%;
-    color: #919191;
+    color: black;
   }
 
   .key-operator {
     width: 25%;
-    color: white;
-    padding: 20px 0;
+    color: black;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bolder;
   }
   .operator {
+    color:black;
     padding-top: 8px;
     padding-bottom: 8px;
-    border-radius: 20px;
-    height: 60px;
+    padding-left:24px;
+    padding-right:24px;
+    border-radius: 5px;
+    height: 28px;
     display: inline;
   }
   .operator.divide {
     background-color: #cb7dc9;
-    padding-left: 12px;
-    padding-right: 12px;
+
   }
   .operator.substract {
-    background-color: #fcb064;
-    padding-left: 14px;
-    padding-right: 14px;
+    background-color: #ff6f61;
+
   }
   .operator.add {
     background-color: #fb96cf;
-    padding-left: 12px;
-    padding-right: 12px;
+
   }
   .operator.multiply {
     background-color: #68cef1;
-    padding-left: 13px;
-    padding-right: 13px;
+
   }
 
   .key-action {
@@ -115,10 +125,12 @@
     padding: 10px 0;
   }
   .action.back {
-    color: #d68086;
+    background-color:#fcb064;
+    color: black;
     border: 1px solid #d68086;
   }
   .action.equal {
-    color: #9ed8a6;
-    border: 1px solid #9ed8a6;
+    background-color:#fcb064;
+    color: black;
+    border: 1px solid #d68086;
   }
