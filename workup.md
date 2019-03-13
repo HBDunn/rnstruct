@@ -1,26 +1,31 @@
                             **NOT react-native-web**
 ====================================================
 
-REACT + REACT-NATIVE + WEBPACK
+TOC ```**Version Date: 2/28/19**```
+===================================
+
+ - [REACT + REACT-NATIVE + WEBPACK](#rrnwp)
+ - [Migrate to react-native 58.4 from RN 0.21](#migrate)
+ 
+
+REACT + REACT-NATIVE + WEBPACK <a name=#rrnwp></>
 ==============================
 
 USE: npm **ci** to install from lock file NOT npm i 
 
-Migrate to react-native 58.4 from rn 0.21
+Migrate to react-native 58.4 from RN 0.21<a name=#migrate></>
 =========================================
-
-  **Version Date: 2/28/19**
   
   Verified on Android simulator using win7-64 and Android Studio w/ platform-tools 3.3 
   compiling to version 28.0.3  on Nexus_5X_API_28_x86 avd simulator.  
 
-  Need a *way-back machine* ...determined after getting original react version working as web app.
+  Need a **way-back machine** ...determined after getting original react version working as web app.
   Easier to start over with
   
-```js
-	npm i react-native
-	npm react-native init "rnstruct"
-``` 
+  ```js
+      npm i react-native
+	  npm react-native init "rnstruct"
+  ``` 
 
   Original [code] from Benoit Vallon.  
   Modified and adapted to react-native@**58.4** and react@**16.6.3** by HDunn <hdunn@peswim.com>.  
@@ -37,6 +42,8 @@ Structure
 	  entryFile: "index.android.js"
 	]
 	```
+  *	[map-basic](./directory-tree.md)
+  * [map-detailed](./directory-structure.md)	
   
 Fixes 
 -----
@@ -45,9 +52,9 @@ TLDR: ```npm start```  then in separate terminal from root dir ```react-native r
 
 ###ES6
 
-```js
-   import React from 'react';
-```
+  ```js
+     import React from 'react';
+  ```
   
 ###Events
 
@@ -146,7 +153,7 @@ Tests
   * Rename  CalculatorActions to action after import.
   
    ```js
-      const action = CaclulatorActions
+      const action = CalculatorActions
    ```
  
   * [Snapshot] and getBaseChildren for granular look at App View tests.
@@ -154,14 +161,15 @@ Tests
 
 
 Typescript
-==========
+----------
 only for react not [rn](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/29265)
 
-Start
------
+
+###install ts
 
   ```npm i -D typescript react-native-typescript-transformer @types/react @types/react-native``` 
-  npm install --save-dev @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread
+  
+  ```npm install --save-dev @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread```
  
   ```tsc --init --pretty --jsx react```  
 
@@ -173,7 +181,7 @@ Start
    libs:["2015"](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26218)
 
 Jest
-====
+----
 
   // Note: test renderer must be required after react-native.
   import renderer from 'react-test-renderer';
@@ -190,7 +198,7 @@ WEBPABK & REACT
   * Screen.js had debug reference to react-native DOOH!
   * npm webpack-cli webpack webpack-dev-server
 
- 
+
 refs:
 
 [code]: https://github.com/benoitvallon/react-native-nw-react-calculator
@@ -198,4 +206,141 @@ refs:
 [log]: https://stackoverflow.com/questions/4974568/how-do-i-launch-the-android-emulator-from-the-command-line
 [uuid]: https://github.com/facebook/jest/issues/2172
 [beforeEach()]: https://stackoverflow.com/questions/39321408/testing-react-flux-store-with-jest-in-es6
-[Snapshot]: https://jestjs.io/docs/en/tutorial-react-native.html
+[Snapshot]: https://jestjs.io/docs/en/tutorial-react-native.html  
+  
+
+WEBPABK & REACT & TYPSCRIPT
+===========================
+
+Start with all passing - web and android
+
+Work Flow Issues
+----------------
+
+###Acorn malformed
+
+  check it with npm ls [acorn](https://github.com/webpack/webpack/issues/8656)
+
+  *  ```npm -i -D Acorn```
+  *  ```npm upgrade Acorn```
+  *  ```npm dedup```
+
+###tsconfig challenging
+
+  *  --noEmit false
+  *  **--outdir == webppack output == ./dist**   &  ** exclude: [ "node_modules", "./dist"] **
+     [ref10](https://github.com/shingoinstitute/describe2ts/commit/465550002a4b726bc6711f2e44cb4d2f69ec307d)
+	 [**ref14**](https://stackoverflow.com/questions/42609768/typescript-error-cannot-write-file-because-it-would-overwrite-input-file)
+	 
+  *  jsx = "preserve"
+  
+  [ref1](https://stackoverflow.com/questions/49969071/module-build-failed-error-typescript-emitted-no-output-for)
+  [ref2](https://github.com/TypeStrong/ts-loader/issues/742) - unexpected token
+  [ref8](https://medium.freecodecamp.org/how-to-set-up-a-typescript-project-67b427114884) 
+  [**ref9**](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+  [ref12](https://marcobotto.com/blog/compiling-and-bundling-typescript-libraries-with-webpack/)
+  [**ref13**](https://github.com/keokilee/react-typescript-boilerplate/issues/158)
+  
+  
+####package.json Scripts(#pckjs)
+      
+     dev-serve: ```"tsc && webpack-dev-serve --config webpack.config.js  --hot --progress --mode development"```
+     
+	 build: ```"webpack --config webpack.config.js  --progress --mode production"```
+  
+    
+###@types/node
+
+	outdated most likely [ref11](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25342)
+
+###@types/babel-preset-react
+
+###Babel.config.js
+
+  *not read by webpack
+  
+###ts-loader
+
+	[see]
+
+###Avoided  **Awesome-Typescript**  **Parcel**  & **Others**
+
+###babel
+
+[babel-loader-issues-370](https://github.com/babel/babel-loader/issues/370)
+
+Webpack Debug
+-------------
+
+  [using-webpack-to-transpile-es6-as-separate-files](https://stackoverflow.com/questions/42670633/using-webpack-to-transpile-es6-as-separate-files)
+
+###Debug Webpack **node-nightly **
+
+  *  **[debugging](https://webpack.js.org/contribute/debugging/)**
+  *  [debug-webpack-with-chrome-dev-tools](https://medium.com/webpack/webpack-bits-learn-and-debug-webpack-with-chrome-dev-tools-da1c5b19554)
+  *  ```chrome://inspect/```
+
+
+Jest & Babel
+------------
+
+ [install](https://www.npmjs.com/package/ts-jest)
+
+ ###Types
+
+ [ts-jest]( https://stackoverflow.com/questions/53709410/error-in-error-ts2688-cannot-find-type-definition-file-for-jest)
+  
+  * ```js
+    "types": [
+      "react",
+      "react-native",
+	  "jest"
+    ]
+	```
+
+    [ref3](https://github.com/Microsoft/TypeScript-React-Native-Starter/issues/19)	
+    [ref4](https://gist.github.com/c9s/8e2e621d6cfc4e7f8e778d9a592e7f1b) - babel.
+    [ref5](https://iamturns.com/typescript-babel/) - babel. 	
+    [ref6](https://blog.wax-o.com/2018/05/webpack-loaders-babel-sourcemaps-react-hot-module-reload-typescript-modules-code-splitting-and-lazy-loading-full-tutorial-to-transpile-and-bundle-your-code/)
+    babel-HMR
+	
+###React & Webpack
+
+  start [ref7](https://medium.com/@maxpolski/react-typescript-webpack-jest-93a58c8458e5)
+  
+###React & TypeScript
+
+   JSX - [type ref1](https://stackoverflow.com/questions/54144095/using-jsx-in-typescript-without-react)
+   JSX attr - [type ref2](https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript) 
+   
+     *  TSX: Property does not exist on type 'JSX.IntrinsicElements' [#15449](https://github.com/Microsoft/TypeScript/issues/15449)
+     *  [typescript-event-handlers](https://rjzaworski.com/2018/10/typescript-event-handlers)
+     *  [properly-define-state-in-react-components](https://itnext.io/how-to-properly-define-state-in-react-components-47544eb4c15d)
+     *  [do-not-use-anonymous-functions-to-construct-react-functional-components](https://medium.com/@stevemao/do-not-use-anonymous-functions-to-construct-react-functional-components-c5408ec8f4c7)
+     *  [effective-use-of-typescript-with-react](https://medium.freecodecamp.org/effective-use-of-typescript-with-react-3a1389b6072a)
+     *  **[typescript-react](https://basarat.gitbooks.io/typescript/docs/jsx/react.html)**
+	 *  [how-to-correctly-set-initial-state-in-react-with-typescript-without-constructor](https://stackoverflow.com/questions/52748553/how-to-correctly-set-initial-state-in-react-with-typescript-without-constructor)
+	 *  **[typescriptlang-handbook](https://www.typescriptlang.org/docs/handbook/jsx.html)**
+	 *  **[typescriptlang-handbook](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)**
+	 *  [loading-jsx-file-in-react-component](https://stackoverflow.com/questions/52919195/loading-jsx-file-in-react-component)
+
+  
+tsc fix
+-------
+ 
+ * reverted to @types/node8.0 to try a fix then
+ * fixing tsc errors on globally installed ts
+   use ```types = []```, at ln 42 in [tsconfig.js](https://github.com/ionic-team/ionic-cli/issues/3541)
+
+
+
+package.json<a name=#pckjs></>
+============
+
+
+
+  
+  
+  
+  
+ 
