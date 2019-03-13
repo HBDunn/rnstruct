@@ -17,18 +17,18 @@ Resetting HAST-MAP & Caches
  * rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste-*   
    equal to  
    react-native run-android -- --rest-cache
-   
+
 ###nuke and pave
-   
+
   * rm -rf node_modules && npm install
 
-Package Management 
+Package Management
 ==================
 
 Acorn
 -----
 
-Can be Ignored: 
+Can be Ignored:
 acorn not installed, but it's a peerDependency of acorn-dynamic-import [#8779](https://github.com/webpack/webpack/issues/8779)
 
 Yarn - I reverted to npm
@@ -58,7 +58,7 @@ Webpack-Config-Help?
 
   [Saving Throw SO Ref](https://webpack.js.org/configuration/resolve/#resolve-alias)
 
-  
+
 MiniCssExtractPlugin
 --------------------
 
@@ -73,16 +73,38 @@ Webpack-Debug
  *Error - Client on node: Uncaught ReferenceError: require is not defined
   target: ['web'](https://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined)
 
-###Misc
 
+
+###install webpack
+
+  npm webpack-cli webpack webpack-dev-server
+  
+  - fails react-native
+  - filtering test with regex ```/^(?!.*\..*\.(js.?)$)(.*\.js.?)$ /```
+  - skips .native.js(x) and .android.js(x), but webpack still fails on compile of react-native
+
+###Misc
+	
  * fails react-native "Can not resolve ... in react-native/react-native-implementations.js
-   check that web/electron components are NOT referencing react-native 
+   check that web/electron components are NOT referencing react-native
  * Plugin/Preset files are not allowed to export objects, only functions [#8707](https://github.com/babel/babel/issues/8707)
  * Unable to resolve module `schedule/tracking` [#21150](https://github.com/facebook/react-native/issues/21150)
  * [index.android.js vs index.js](https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows/44476757#44476757)
 
  ###VSCODE
- 
+
  [launch.json](https://stackoverflow.com/questions/34835082/how-to-debug-using-npm-run-scripts-from-vscode)
+
+ Git
+ ---
  
+  [remove](https://help.github.com/en/articles/removing-sensitive-data-from-a-repository) node_modules from index after tracking for debug
  
+  use : git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' --prune-empty --tag-name-filter cat -- --all
+  
+  ```git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch node_modules/**/*' --prune-empty --tag-name-filter cat -- --all```
+  
+  
+  
+  
+  
