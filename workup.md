@@ -1,6 +1,12 @@
                             **NOT react-native-web**
 ====================================================
 
+**NPM CI**
+==========
+
+[Stop upgrading](https://docs.npmjs.com/cli/ci.html) on ever install that re-breaks a working code-base.
+
+
 TOC ```**Version Date: 2/28/19**```
 ===================================
 
