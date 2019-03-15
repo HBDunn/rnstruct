@@ -4,8 +4,9 @@
 **NPM CI**
 ==========
 
-[Stop upgrading](https://docs.npmjs.com/cli/ci.html) on ever install that re-breaks a working code-base.
+[Stop upgrading](https://docs.npmjs.com/cli/ci.html) on install that re-breaks a working code-base.
 
+```**Use npm ci**```
 
 TOC ```**Version Date: 2/28/19**```
 ===================================
@@ -16,6 +17,12 @@ TOC ```**Version Date: 2/28/19**```
 
 REACT + REACT-NATIVE + WEBPACK <a name=#rrnwp></>
 ==============================
+| Webpage             |  Android         |
+:--------------------:|:-----------------:
+![rnstruct-android](screencapture-localhost-8083-2019-03-14-22_12_22.png "rnstruct-android")
+![rnstruct-web](Screenshot_1552620453.png "rnstruct-web")
+![rnstruct-android-action](screencapture-localhost-8083-2019-03-14-22_36_59.png "rnstruct-android-action")
+![rnstruct-web-action](Screenshot_1552624408.png "rnstruct-web-ation")
 
 USE: npm **ci** to install from lock file NOT npm i 
 

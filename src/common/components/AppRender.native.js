@@ -32,13 +32,16 @@ var styles = StyleSheet.create({
     alignItems: Platform.OS === 'android' ? 'center' : 'flex-end',
     justifyContent: 'flex-end',
     backgroundColor: '#68cef2',
+	color:'#190d08',
     padding: 18
   },
   formulae: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    backgroundColor: '#4c4c4c',
+    backgroundColor: '#f0f0f0',
+	borderColor:'#ffe387',
+	borderWidth:1,
     padding: 20
   },
   keyboard: {

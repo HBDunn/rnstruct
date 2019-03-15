@@ -27,10 +27,10 @@ export default function () {
       </div>
 
       <div className='keyboard-row'>
-        <Key keyType='operator' keyValue='divide' keySymbol='÷' />
-        <Key keyType='operator' keyValue='substract' keySymbol='-' />
-        <Key keyType='operator' keyValue='add' keySymbol='+' />
-        <Key keyType='operator' keyValue='multiply' keySymbol='x' />
+        <Key keyType='operator' keyValue='divide' keySymbol={String.fromCharCode(10135)} />
+        <Key keyType='operator' keyValue='substract' keySymbol={String.fromCharCode(10134)} />
+		<Key keyType='operator' keyValue='add' keySymbol={String.fromCharCode(10133)} />
+        <Key keyType='operator' keyValue='multiply' keySymbol={String.fromCharCode(10006)}/>
       </div>
 
       <div className='keyboard-row'>

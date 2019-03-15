@@ -13,7 +13,7 @@ export default function (props, state) {
 const styles = StyleSheet.create({
   screen: {
     color: '#190d08',
-    fontSize: 70,
+    fontSize: 60,
     fontWeight: '200'
   }
 });

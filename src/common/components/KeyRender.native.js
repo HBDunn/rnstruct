@@ -44,8 +44,8 @@ var getOperatorStyles = function(classOperation) {
   var buttonOperator = {
     basic: {
       height: 50,
-      width: 50,
-      borderRadius: 25,
+      width: 75,
+      borderRadius: 10,
       alignItems: 'center',
       justifyContent: 'center'
     },
@@ -73,22 +73,27 @@ var getActionStyles = function(classOperation) {
   var buttonAction = {
     basic: {
       flex: 1,
+	  backgroundColor:'#fefefe',
       borderRadius: 10,
       alignItems: 'center',
       justifyContent: 'center'
     },
     back: {
+	  
+	  borderColor: '#ffe387',
       paddingBottom: 1,
-      borderColor: '#d68086',
-      borderWidth: 1
+      borderWidth: 3
     },
     equal: {
+	  
+	  borderColor: '#ffe387',
       paddingBottom: 1,
-      borderColor: '#9ed8a6',
-      borderWidth: 1
+      borderWidth: 3
     }
   };
-  return Object.assign(buttonAction.basic, buttonAction[classOperation]);
+  
+  return {...buttonAction.basic,...buttonAction[classOperation]};
+  //Object.assign(buttonAction.basic, buttonAction[classOperation]);
 };
 
 var getActionButtonStyles = function(classOperation) {
@@ -99,11 +104,10 @@ var getActionButtonStyles = function(classOperation) {
     },
     back: {
       paddingBottom: 3,
-      color: '#d68086'
+      
     },
     equal: {
       paddingBottom: 3,
-      color: '#9ed8a6'
     }
   };
   return Object.assign(buttonText.basic, buttonText[classOperation]);
@@ -112,7 +116,7 @@ var getActionButtonStyles = function(classOperation) {
 var styles = StyleSheet.create({
   keyNumber: {
     flex: 1,
-    borderColor: '#f8f8f8',
+    borderColor: '#f0f0f0',
     borderWidth: 1
   },
   keyOperator: {
@@ -129,18 +133,18 @@ var styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#fefefe',
     alignItems: 'center',
     justifyContent: 'center'
   },
   textButton: {
-    color: '#919191',
-    fontSize: 20,
+    color: '#717171',/*919191*/
+    fontSize: 30,
     fontWeight: '400'
   },
   textButtonOperator: {
-    color: 'white',
-    fontSize: 20,
+    color: '#717171',
+    fontSize: 30,
     fontWeight: '600'
   }
 });

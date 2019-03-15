@@ -18,15 +18,21 @@
   */
 
   html, body {
-  background: #421C52;
+	font-family: Roboto, sans-serif;
   }
-
+  body {
+    background-color: #f0f0f0;
+  }
+  .main{
+    font-family: Roboto, sans-serif;	
+  } 
+	  
   .calculator {
-    height: 00;
-    background: blue;
+    height: 0;
+    background: #68cef2;
   }
   .screen {
-    background-color: #91A8D0;
+    background-color: #68cef2;
     color: #190d08;
     font-size: 50px;
     padding: 30px 10px;
@@ -35,7 +41,10 @@
   }
 
   .formulae {
-    background-color: #4c4c4c;
+	margin:3px;
+    background-color: #f0f0f0;
+	border-width:10px;
+	border-color:#ffe387;
     padding: 20px 10px;
     text-align: right;
     font-weight: lighter;
@@ -65,10 +74,11 @@
   }
 
   .keyboard {
-    background: #ffe387;
+    background: #f0f0f0;
     height: 300px;
   }
   .keyboard-row {
+	background: #f0f0f0;  
     display: table;
     width: 100%;
   }
@@ -78,7 +88,7 @@
     text-align: center;
     border-radius: 5px;
     padding: 10px 0;
-    font-weight: bolder;
+    font-weight: 700;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -87,21 +97,22 @@
     transition: all 0.2s;
   }
   .key-number {
-    border: 1px solid #888888;
+    border: 1px solid #f0f0f0;
+	background-color:#fefefe;
     width: 33%;
-    color: black;
+    color: #717171;
   }
 
   .key-operator {
     width: 25%;
-    color: black;
+    color: #717171;
     padding: 5px;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-weight: bolder;
+    font-weight:bolder;
   }
   .operator {
-    color:black;
+    color:#717171;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left:24px;
@@ -109,25 +120,25 @@
     border-radius: 5px;
     height: 28px;
     display: inline;
+	font-weight:700;
   }
   .operator.divide {
     background-color: #cb7dc9;
-
+	font-weight:normal;
   }
   .operator.substract {
-    background-color: #ff6f61;
-
+    background-color: #fcb064;
   }
-  .operator.add {
+  .operator.add { 
     background-color: #fb96cf;
 
   }
   .operator.multiply {
     background-color: #68cef1;
-
   }
 
   .key-action {
+	font-weight:bolder;
     width: 50%;
     padding: 20px;
   }
@@ -136,12 +147,12 @@
     padding: 10px 0;
   }
   .action.back {
-    background-color:#fcb064;
-    color: black;
-    border: 1px solid #d68086;
+    background-color:#fefefe;
+    color: #717171;
+    border: 1px solid #ffe387;
   }
   .action.equal {
-    background-color:#fcb064;
-    color: black;
-    border: 1px solid #d68086;
+    background-color:#fefefe;
+    color: #717171;
+    border: 1px solid #ffe387;
   }

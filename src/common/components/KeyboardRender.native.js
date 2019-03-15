@@ -1,9 +1,8 @@
 'use strict';
-
-import Key from './Key';
 import React from 'react';
+import Key from './Key';
 import { StyleSheet, View } from 'react-native';
-
+//pain in the patella '÷' '×'
 export default function () {
   return (
     <View style={styles.keyboard}>
@@ -30,10 +29,10 @@ export default function () {
       </View>
 
       <View style={styles.row}>
-        <Key keyType='operator' keyValue='divide' keySymbol='÷' />
-        <Key keyType='operator' keyValue='substract' keySymbol='-' />
-        <Key keyType='operator' keyValue='add' keySymbol='+' />
-        <Key keyType='operator' keyValue='multiply' keySymbol='x' />
+        <Key keyType='operator' keyValue='divide' keySymbol={String.fromCharCode(247)} />
+        <Key keyType='operator' keyValue='substract' keySymbol={String.fromCharCode(8722)} />
+		<Key keyType='operator' keyValue='add' keySymbol='+' />
+        <Key keyType='operator' keyValue='multiply' keySymbol={String.fromCharCode(215)}/>
       </View>
 
       <View style={styles.row}>
@@ -47,10 +46,14 @@ export default function () {
 
 var styles = StyleSheet.create({
   keyboard: {
-    flex: 1
+    flex: 1,
+	backgroundColor: '#f0f0f0'
   },
   row: {
     flex: 1,
-    flexDirection: 'row'
-  }
+    flexDirection: 'row',
+	backgroundColor: '#f0f0f0'
+  },
+  
+	  
 });

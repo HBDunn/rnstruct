@@ -1,5 +1,6 @@
 'use strict';
 
+//import * as React from 'react';
 import * as React from 'react';
 
 interface Props {[key:string]:string};
@@ -10,11 +11,14 @@ declare namespace JSX {
     render(): any;
   }
   interface IntrinsicElements {
-    div: {className:string};
+    div: {
+		className:string;
+		style:any;
+		};
   }
 }
 
-export default function ({},state:State): JSX.Element {
+export default function (props: Props,state:State): JSX.Element {
   return (
     <div className='screen'>
       {state.displayScreen}
