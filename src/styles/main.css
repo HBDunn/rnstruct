@@ -14,7 +14,7 @@
 	--orig-keybrd-brdr:#f8f8f8;
 	--orig-key-op:white;
 	--orig-act-back:#d68086;
-	
+
   */
 
   html, body {
@@ -24,9 +24,9 @@
     background-color: #f0f0f0;
   }
   .main{
-    font-family: Roboto, sans-serif;	
-  } 
-	  
+    font-family: Roboto, sans-serif;
+  }
+
   .calculator {
     height: 0;
     background: #68cef2;
@@ -41,10 +41,10 @@
   }
 
   .formulae {
-	margin:3px;
+	  margin:3px;
     background-color: #f0f0f0;
-	border-width:10px;
-	border-color:#ffe387;
+	  border-width:10px;
+	  border-color:#ffe387;
     padding: 20px 10px;
     text-align: right;
     font-weight: lighter;
@@ -78,7 +78,7 @@
     height: 300px;
   }
   .keyboard-row {
-	background: #f0f0f0;  
+	background: #f0f0f0;
     display: table;
     width: 100%;
   }
@@ -129,7 +129,7 @@
   .operator.substract {
     background-color: #fcb064;
   }
-  .operator.add { 
+  .operator.add {
     background-color: #fb96cf;
 
   }
