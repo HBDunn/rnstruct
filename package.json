@@ -1,7 +1,8 @@
 {
   "name": "rnstruct",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
+  "description": " codebase share react-react-native-webpack-typescript-babel-jest",
+  "main": "index.js",
   "scripts": {
     "types": "tsc --noEmit",
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -9,6 +10,26 @@
     "web-dev": "webpack-dev-server --config ./webpack.config.js  --hot --progress --colors --mode development",
     "web": "tsc  &&  webpack --config ./webpack.config.js --progress --colors --mode production"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HBDunn/rnstruct.git"
+  },
+  "keywords": [
+    "code-base",
+    "share",
+    "react@16.6.3",
+    "react-native@58.4",
+    "webpack@49.6",
+    "typescript",
+    "@babel7",
+    "jest"
+  ],
+  "author": "hdunn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HBDunn/rnstruct/issues"
+  },
+  "homepage": "https://github.com/HBDunn/rnstruct#readme",
   "dependencies": {
     "buffer": "^5.2.1",
     "eventemitter3": "^3.1.0",
