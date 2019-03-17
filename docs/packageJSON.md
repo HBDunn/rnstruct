@@ -1,0 +1,99 @@
+**[TOC](./workup.md#toc)**
+
+```json
+{
+  "name": "rnstruct",
+  "version": "1.0.0",
+  "description": " codebase share react-react-native-webpack-typescript-babel-jest",
+  "main": "index.js",
+  "scripts": {
+    "types": "tsc --noEmit",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "web-dev": "webpack-dev-server --config ./webpack.config.js  --hot --progress --colors --mode development",
+    "react-native:ios": "react-native bundle --entry-file src/index.ios.js --bundle-output ios/main.jsbundle --platform ios --dev false",
+    "react-native:android": "react-native bundle --entry-file src/index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --platform android --dev false",
+    "travis": "npm run build:web && npm run react-native:ios && npm run react-native:android && npm test",
+    "build:web": "tsc  &&  webpack --config ./webpack.config.js --progress --colors --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HBDunn/rnstruct.git"
+  },
+  "keywords": [
+    "code-base",
+    "share",
+    "react@16.6.3",
+    "react-native@58.4",
+    "webpack@49.6",
+    "typescript",
+    "@babel7",
+    "jest"
+  ],
+  "author": "hdunn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HBDunn/rnstruct/issues"
+  },
+  "homepage": "https://github.com/HBDunn/rnstruct#readme",
+  "dependencies": {
+    "buffer": "^5.2.1",
+    "eventemitter3": "^3.1.0",
+    "normalize.css": "^8.0.1",
+    "react": "16.6.3",
+    "react-dom": "^16.6.3",
+    "react-native": "0.58.4",
+    "react-native-uuid": "^1.4.9",
+    "upath": "^1.1.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/runtime": "^7.3.1",
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.4",
+    "@types/react-native": "^0.57.38",
+    "acorn": "^6.1.1",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "24.1.0",
+    "metro-react-native-babel-preset": "^0.51.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "react-native-typescript-transformer": "^1.2.11",
+    "react-test-renderer": "16.6.3",
+    "schedule": "^0.5.0",
+    "styles-loader": "^1.0.0",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.13.0",
+    "tslint-webpack-plugin": "^2.0.2",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "jest": {
+    "transform": {
+	  "^.+\\.jsx?$": "babel-jest",
+	  "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
+```
