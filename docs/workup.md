@@ -5,7 +5,7 @@
 
  **NOT react-native-web**
 
-###**NPM CI**
+### **NPM CI**
  [Stop upgrading](https://docs.npmjs.com/cli/ci.html) on install that re-breaks a working code-base.
 
  ```**Use npm ci**```
@@ -14,7 +14,7 @@
 =========================================
   [Speed-Up Migration](./cleaning.md)
 
-  1.0 [REACT + REACT-NATIVE + WEBPACK](#rrnwp)
+1.0 [REACT + REACT-NATIVE + WEBPACK](#rrnwp)
 
 2.0 [Migrating to react-native 58.4 from RN 0.21](#migrate)
   - [2.1.a. Directory Structure](#DS)
@@ -128,7 +128,7 @@ The direct command is using gradlew in the android/ directory:
   
    * Prod
    
-###<a name=es6/>ES6
+### <a name=es6/>ES6
 
   * imports
 
@@ -140,7 +140,7 @@ The direct command is using gradlew in the android/ directory:
 	import * as React from 'react';
 	```
   
-###<a name=events/>Events
+### <a name=events/>Events
 
   * ```this.on```  in  EventEmitter addChangeListener is undefined in prototype  
 	as this is not constructed EvenEmitter no reference to this in prototype
@@ -150,7 +150,7 @@ The direct command is using gradlew in the android/ directory:
 	   import EventEmitter from 'eventemitter3';
 	``` 
    
-###<a name=uq/>uniqid
+### <a name=uq/>uniqid
 
   * Use [uuid](https://www.npmjs.com/package/react-native-uuid)
   
@@ -160,12 +160,12 @@ The direct command is using gradlew in the android/ directory:
   
   * In modules replace 'uniqid' with 'uuid';
 	
-###<a name=km/>KeyMirror
+### <a name=km/>KeyMirror
 
   * Deprecated in RN.  
   * Hi-Jacked [keyMirror] into mkdir /utils.
 
-###<a name=buff/>Buffer
+### <a name=buff/>Buffer
 
   Needed to add "buffer" to your package.json dependencies. There's some issues w/ recursive dependencies  
   not being resolved with *npm* so you need to resolve them yourself.
@@ -177,7 +177,7 @@ The direct command is using gradlew in the android/ directory:
 ------------------------
 Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/29265)
 
-<a name=its/>###Install TS
+<a name=its/>### Install TS
 
   ```npm i -D typescript react-native-typescript-transformer @types/react @types/react-native``` 
   
@@ -189,7 +189,7 @@ Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyT
   
   - ** npm i = install; -D = -save-dev**.
 
-####<a name=tscon/>tsconfig
+### #<a name=tscon/>tsconfig
 
   use: [tsconfig.js](https://github.com/Microsoft/TypeScript-React-Native-Starter/blob/master/ExampleProject/tsconfig.json)
 
@@ -231,13 +231,13 @@ Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyT
 
 [using-webpack-to-transpile-es6-as-separate-files](https://stackoverflow.com/questions/42670633/using-webpack-to-transpile-es6-as-separate-files)
 
-###<a name=target/>Target
+### <a name=target/>Target
 
  *Error - Client on node: Uncaught ReferenceError: require is not defined
   target: ['web'](https://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined)
 
 
-###<a name=misc/>Misc
+### <a name=misc/>Misc
 	
  * fails react-native "Can not resolve ... in react-native/react-native-implementations.js
    check that web/electron components are NOT referencing react-native
@@ -260,7 +260,7 @@ Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyT
 <a name=issues/>Work Flow Issues
 --------------------------------
 
-###<a name=acorn/>Acorn malformed
+### <a name=acorn/>Acorn malformed
 
   Check [Acorn](https://github.com/webpack/webpack/issues/8656)
   with ```npm ls acorn ```
@@ -269,7 +269,7 @@ Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyT
   *  ```npm upgrade Acorn```
   *  ```npm dedup```
 
-###<a name=tsc/>tsconfig Challenging
+### <a name=tsc/>tsconfig Challenging
 
   * --noEmit false
   * **--outdir** is webpack **output = ./dist**
@@ -288,7 +288,7 @@ Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyT
 	  [**ref13**](https://github.com/keokilee/react-typescript-boilerplate/issues/158)
   
   
-####package.json Scripts<a name=pckjscrpt /></>
+### #package.json Scripts<a name=pckjscrpt /></>
       
   * dev-serve:
 
@@ -302,11 +302,11 @@ Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyT
 	"webpack --config webpack.config.js  --progress --mode production"
 	```
   
-###<a name=babc/>Babel.config.js
+### <a name=babc/>Babel.config.js
 
   * **Not read by webpack** - as far as I can tell.
  
-###<a name=types/>Types
+### <a name=types/>Types
 
  * Reverted to @types/node8.0 to try a fix then
  * Ended up at @types/node10.11
@@ -328,21 +328,21 @@ Only for react not [react-native](https://github.com/DefinitelyTyped/DefinitelyT
   [ref6](https://blog.wax-o.com/2018/05/webpack-loaders-babel-sourcemaps-react-hot-module-reload-typescript-modules-code-splitting-and-lazy-loading-full-tutorial-to-transpile-and-bundle-your-code/) 
    babel-HMR
  
-###<a name=node/>@types/node
+### <a name=node/>@types/node
 
   - Outdated(most likely) [ref11](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25342)
 
-###<a name=bpr/>@types/babel-preset-react
+### <a name=bpr/>@types/babel-preset-react
  
-###<a name=tsload/>ts-loader
+### <a name=tsload/>ts-loader
 
-###<a name=avoid/>Avoided
+### <a name=avoid/>Avoided
 
   - **Awesome-Typescript**
   - **Parcel**
   - & **Others**
 
-###<a name=bab/>babel
+### <a name=bab/>babel
 
 [babel-loader-issues-370](https://github.com/babel/babel-loader/issues/370)
 
@@ -432,14 +432,14 @@ import renderer from 'react-test-renderer';
 ------------------------
  [Install ts-jest](https://www.npmjs.com/package/ts-jest)
 
-package.json<a name=pckjs></>
-============================= 
+package.json<a name=pckjs>
+========================== 
   * [package.json](./packageJSON.md) 
   
-tsconfig.json<a name=tscnfgjs></>
-=================================
+tsconfig.json<a name=tscnfgjs>
+==============================
   * [tsconfig.json](./tsconfig.md) 
   
-webpack.config.js<a name=webpk></>
-==================================
+webpack.config.js<a name=webpk>
+===============================
   * [webpack.config.js](./webpackconfig.md)  

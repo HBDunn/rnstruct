@@ -1,12 +1,12 @@
 Speed-Up Migration
 ==================
-###cmd-line emulator 
+### cmd-line emulator 
 
   * Use adb [log]
   * start in bash shell  ``` $ adb logcat *:S ReactNativeJS:V ReactNative:V```
   * clear log bash shell ``` $ adb log -c```
 
-###Avoid "Red-Blocks" on Android
+### Avoid "Red-Blocks" on Android
 
 In general found that using ```npm start``` in a separate terminal did not perform as well as ```react-native``.
 Apparently there is a different start-up used in the react-native scripts.
@@ -14,7 +14,7 @@ Apparently there is a different start-up used in the react-native scripts.
 Clearing cache and Hast-map "react-native run-android -- --reset-cache" is the correct command.
 Also monitor port 8080 + (8081 etc) ports with netstat to keep node.exe and 808? ports available.
  
-####checking on server state - requires elevation
+### #checking on server state - requires elevation
 
   * windows
   
@@ -37,7 +37,7 @@ Also monitor port 8080 + (8081 etc) ports with netstat to keep node.exe and 808?
   * tasklist - with a ```tasklist | grep ``` 
   * watch adb.exe too.  
   
-###avd
+### avd
   
   * Have to install Android Studio with **tools**.
   * Set paths to the tool-set.  
@@ -65,19 +65,19 @@ Resetting HAST-MAP & Caches
 
   [Saving Throw](https://gist.github.com/jarretmoses/c2e4786fd342b3444f3bc6beff32098d) Thanks SO  
 
-###Windows-cmd
+### Windows-cmd
 
  * `del %appdata%\Temp\react-native-* & cd android & gradlew clean & cd .. & del node_modules/ & npm cache clean --force & npm install & npm start -- --reset-cache`
     or
  * `del %appdata%\Temp\react-native-* & cd android & gradlew clean & cd .. & del node_modules/ & npm cache clean --force & yarn install & react-native run-android`
 
-###Bash
+### Bash
 
  * rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste-*   
    equal to  
    react-native run-android -- --rest-cache
 
-###nuke and pave
+### nuke and pave
 
   * rm -rf node_modules && npm ci
 
@@ -112,7 +112,7 @@ React-Native Versions
   [Saving Throw SO Ref](https://github.com/facebook/react-native/releases?after=v0.58.0)
 
 
- ###VSCODE
+ ### VSCODE
 
  [launch.json](https://stackoverflow.com/questions/34835082/how-to-debug-using-npm-run-scripts-from-vscode)
 

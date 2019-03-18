@@ -1,72 +1,68 @@
-# Mobile, desktop and website Apps with the same code
+#Version Date **3/20/2019**
 
-[![Build Status](https://travis-ci.org/benoitvallon/react-native-nw-react-calculator.svg?branch=master)](https://travis-ci.org/benoitvallon/react-native-nw-react-calculator) [![Dependency Status](https://david-dm.org/benoitvallon/react-native-nw-react-calculator.svg)](https://david-dm.org/benoitvallon/react-native-nw-react-calculator) [![devDependency Status](https://david-dm.org/benoitvallon/react-native-nw-react-calculator/dev-status.svg)](https://david-dm.org/benoitvallon/react-native-nw-react-calculator#info=devDependencies)
+[![Build Status](https://travis-ci.org/HBDunn/rnstruct.svg?branch=master)](https://travis-ci.org/HBDunn/rnstruct)
+[![Dependency Status](https://david-dm.org/HBDunn/rnstruct.svg)](https://david-dm.org/HBDunn/rnstruct)
+[![devDependency Status](https://david-dm.org/HBDunn/dev-status.svg)](https://david-dm.org/HBDunn/rnstruct#info=devDependencies)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/HBDunn/rnstruct/master.svg?style=flat-square)](https://codecov.io/gh/HBDunn/rnstruct/)
 
-This project shows how single source code architecture is used to run multiple devices:
+[![Known Vulnerabilities](https://snyk.io/test/github/HBDunn/rnstruct.svg?)](https://snyk.io/test/github/HBDunn/rnstruct)
+
+
+# React React-Native Webpack Babel Typescript Jest Travis CI 
+# React-Native@58.4 Mobile & React Website Code-Base Share
+
+Simplify Calculator: single source code architecture to run multiple devices:
 
 - Android(tested) & iOS Apps with [react-native](https://facebook.github.io/react-native))
 - Desktop App using [Electron](http://electron.atom.io)
-- Website App in any browser using [react](https://facebook.github.io/react)
+- Website App in any browser using(tested) [react](https://facebook.github.io/react)
+	
+##**[Migration & Debug Details]** from Javascript React-Native 0.21](./docs/workup.md)
 
-A demo for the Website App is available [here](http://benoitvallon.github.io/react-native-nw-react-calculator).
+##Application Code Structure with Flux(simple Redux) Store
 
-## Screenshots
+Single source code is all contained in the `src` directory
 
-### Mobile Apps (iOS & Android)
+- `index.ios.(js | ts)` & `index.android.(js | ts)` are the entry points to build the iOS & Android Apps
+- `index.(js | ts)` is the entry point to build the Website/Desktop App. 
 
-![Mobile Apps](images/mobile-apps.png "Mobile Apps")
+notes:Typescript has been partially implemeted (work in progress at publish date) to show tool-chain functionality.
+     :Webpack has not been optimized for production   
 
-### Desktop Apps (Electron)
+### Flux Architecture Actions/Stores
 
-![Desktop App](images/desktop-apps.png "Desktop App")
-
-### Website App
-
-![Website App](images/website-app.png "Website App")
-
-##Libraries/tools
-
-This project uses libraries and tools like:
-- es6 syntax and [babel](https://babeljs.io)
-- [react](https://facebook.github.io/react) for the Website App and Desktop App,
-- [react-native](https://facebook.github.io/react-native) for the iOS & Android Apps
-- [Electron](http://electron.atom.io) to package the Desktop App
-- [flux](https://facebook.github.io/flux) dispatcher to organize the data flow management
-- [css-loader](https://github.com/webpack/css-loader) to integrate the styles in the builds
-- [grunt](http://gruntjs.com) to create the builds
-- [webpack](https://webpack.github.io) to help during the development phase with hot reloading
-
-##Structure
-
-All the code is contained in the `src` directory, especially the 3 main entry files that are used for the builds:
-- `index.ios.js` & `index.android.js` are the ones used to build the iOS & Android Apps
-- `index.js` is the one used to build the Website App and Desktop App as the code is strictly the same.
-
-### Flux architecture actions/stores
-
-All the [flux](https://facebook.github.io/flux) architecture is share to 100% to all the different builds. This means that all the logic and data management code is done only once and reuse everywhere. This allows us to have an easy tests suite as well and to ensure that our code is working properly on all the devices.
+The [flux](https://facebook.github.io/flux) architecture is completly shared
+by all builds, with logic and data management. 
 
 ### Components
 
-The real interest of the project is in how the components have been structured to shared most of their logic and only redefined what is specific to every device.
+Components are structured to share logic. Logic code paths are only split when a specific device requires different code path,
+i.e. react component <div> vs react-native component <TEXT>, but the content is single source derived.
 
-Basically, every component has a main `Class` which inherits a base `Class` containing all the logic. Then, the main component import a different Render function which has been selected during the build. The file extension `.ios.js`, `.android.js` or `.js` is used by the build tool to import only the right file.
+Each device's (web/mobile) component main `Class` is inherited from a logic defining base `Class`.
+During a build the device main class imports a different Render function based on the file name signature. 
+The file extension `.ios.js`, `.android.js` or `.js` is will be picked by the build tool to import only the correct render file.
 
-The `.native.js` files contain code that is shared between both mobile platforms (iOS & Android). Currently, the `.ios.js` and `.android.js` files compose this `.native.js` file since all code is shared right now. However, if a component needed to be different for platform specific reasons, that code would be included in the corresponding platform specific files.
+ - `.native.js` files contain code that is shared between both mobile platforms (iOS & Android).
+ - `.ios.js` and `.android.js` files import the `.native.js` files, currently shared right now.
 
-At the end, every component is defined by 6 files. If we look at the screen component, here is its structure.
+However, if a component (ios/android) needs a different platform specific code base, then the platform specific code resides in 
+io.js or .android.js file.
+
+**Each Component** is defined by six files. Screen component strucure:
 
 ```
 Screen.js
-├── ScreenBase.js
-├── ScreenRender.ios.js (specific to iOS build
-├── ScreenRender.android.js (specific to Android build)
-├── ScreenRender.native.js (shared mobile app code - iOS & Android)
-└── ScreenRender.js (used during Website and Desktop build)
+├── ScreenBase.(jsx?  tsx?)
+├── ScreenRender.ios.(jsx | tsx) (specific to iOS build
+├── ScreenRender.android.(jsx | tsx) (specific to Android build)
+├── ScreenRender.native.(jsx | tsx) (shared mobile app code - iOS & Android)
+└── ScreenRender.(jsx | tsx) (used during Website and Desktop build)
 ```
 
-And here is the main `Class` file "Screen.js" which composes the files. 
-Know that the react-native compiler/bundler will only pick up .android. or .ios. and .native. and ignore .js
+The main `Class` file "Screen.js" which composes the files. 
+
+**The react-native compiler/bundler will only comple  .android. or .ios. and .native. and **ignore** .js
 
 ```js
 'use strict';
