@@ -14,72 +14,65 @@
 =========================================
   [Speed-Up Migration](./cleaning.md)
 
-  1.  [REACT + REACT-NATIVE + WEBPACK](#rrnwp)
-  2.  [Migrating to react-native 58.4 from RN 0.21](#migrate)
- 
-	-  [2.1.a Directory Structure](#DS)
-	
-		-  [b Fixes](#fixes)
-		-  [c ES6](#es6)
-		-  [d Events](#events)
-		-  [e uniqid](#uq)
-		-  [f KeyMirror](#km)
-		-  [g Buffer](#buff)
-		
-  3.   [Typescript](#typs)
+  1.0 [REACT + REACT-NATIVE + WEBPACK](#rrnwp)
+
+2.0 [Migrating to react-native 58.4 from RN 0.21](#migrate)
+  - [2.1.a. Directory Structure](#DS)
+    - [b. Fixes](#fixes)
+    - [c. ES6](#es6)
+    - [d. Events](#events)
+    - [e. uniqid](#uq)
+    - [f. KeyMirror](#km)
+    - [g. Buffer](#buff)
+
+3.0 [Typescript](#typs)
+  - [3.1.a. Install TS](#its)
+    - [b. tsconfig](#tscon)
+
+4.0 [WEBPACK & REACT & BABEL](#wrb)
+  - [4.1.a. Webpack Setup](#ws)
+    - [b. Webpack-Config-Help?](#wch)
+    - [c. MiniCssExtractPlugin](#mincss)
+    - [d. My Big Foul-up](#mfu)
+    - [e. Webpack-Debug](#debug)
+    - [f. Target](#target)
+    - [g. Misc](#misc)		
+
+5.0 [WEBPABK & REACT & BABEL & TYPSCRIPT](#wrbt)
+  - [5.1.a. Work Flow Issues](#issues)
+    - [b. Acorn malformed](#acorn)
+    - [c. tsconfig Challenging](#tsc)
+    - [d. package.json scripts](#pckjscrpt )
+    - [e. Babel.config.js](#babc)
+    - [f. Types](#types)
+    - [g. @types/node](#node)
+    - [h. @types/babel-preset-react](#bpr)
+    - [i. ts-loader](#tsload)
+    - [j. Avoided](#avoid)
+    - [k. babel](#bab)
+  - [5.2.a React & TypeScript](#rts)	
   
-	- [3.1.a Install TS](#its)
-		- [b tsconfig](#tscon)
-		
-  4.  [WEBPACK & REACT & BABEL](#wrb)
-  
-	-  [4.1.a Webpack Setup](#ws)
-	
-		-  [b Webpack-Config-Help?](#wch)
-		-  [c MiniCssExtractPlugin](#mincss)
-		-  [d My Big Foul-up](#mfu)
-		-  [e Webpack-Debug](#debug)
-		-  [f Target](#target)
-		-  [g Misc](#misc)
-		
-  5.  [WEBPABK & REACT & BABEL & TYPSCRIPT](#wrbt)
-  
-	-  [5.1.a Work Flow Issues](#issues)
-	
-		-  [b Acorn malformed](#acorn)
-		-  [c tsconfig Challenging](#tsc)
-		-  [d package.json scripts](#pckjscrpt )
-		-  [e Babel.config.js](#babc)
-		-  [f Types](#types)
-		-  [g @types/node](#node)
-		-  [h @types/babel-preset-react](#bpr)
-		-  [i ts-loader](#tsload)
-		-  [j Avoided](#avoid)
-		-  [k babel](#bab)
-		
-	-  [5.2 React & TypeScript](#rts)
-	
-  6.  [JEST TESTS](#jtests)
-  
-	-  [6.1.a Jest js](#jestjs)
-		-  [b Tests](#tests)
-		-  [c Jest ts](#jestjs)
-		-  [d Jest & Babel](#jb)
-		
-  7.  [package.json](#pckjs)
-  8.  [tsconfig.json](#tscnfgjs)
-  9.  [webpack.config.js](#webpk)
+6.0 [JEST TESTS](#jtests)  
+  - [6.1.a Jest js](#jestjs)
+    - [b. Tests](#tests)
+    - [c. Jest ts](#jestjs)
+    - [d. Jest & Babel](#jb)
+    
+7.0 [package.json](#pckjs)
+
+8.0 [tsconfig.json](#tscnfgjs)
+
+9.0 [webpack.config.js](#webpk)
 
  [Final Draft ScreenShots]() 
- 
-  | <pre>           </pre> |   Webpage<pre>      </pre> | <pre>   </pre> |          Android <pre>                           <pre> | <pre>         </pre> |
-  |:----------------------:|:--------------------------:|:--------------:|:-------------------------------------------------------:----------------------:
-  | <pre>           </pre> | ![rnstruct-web](screencapture-localhost-8083-2019-03-14-22_12_22s.png "rnstruct-web") | <pre>       </pre> | &nbsp ![rnstruct-android](Screenshot_1552620453s.png "rnstruct-android") 
-  | | | |
-  | <pre>           </pre> | ![rnstruct-web-action](screencapture-localhost-8083-2019-03-14-22_36_59s.png "rnstruct-web-ation") | <pre>        </pre> | &nbsp ![rnstruct-android-action](Screenshot_1552624408s.png "rnstruct-android-action") 
+
+| &nbsp; &nbsp; &nbsp; |   Webpage&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; Android &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; |
+|----------------------:|:--------------------------:|:--------------:|:-------------------------------------------------------:|:----------------------:|
+| &nbsp; &nbsp; &nbsp; | ![](screencapture-localhost-8083-2019-03-14-22_12_22s.png) | &nbsp; &nbsp; &nbsp; | ![](Screenshot_1552620453s.png) | &nbsp; &nbsp; &nbsp; |
+| &nbsp; &nbsp; &nbsp; | ![](screencapture-localhost-8083-2019-03-14-22_36_59s.png) | &nbsp; &nbsp; &nbsp; | ![](Screenshot_1552624408s.png) | &nbsp; &nbsp; &nbsp; |
 
 
-    USE: npm **ci** to install from lock file NOT npm i 
+  USE: npm **ci** to install from lock file NOT npm i 
 
 **[TOC](#toc)**
 	
