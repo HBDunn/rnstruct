@@ -7,6 +7,7 @@
     "types": "tsc --noEmit",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest && codecov",
+    "test-local": "jest --verbose --color",
     "web-dev": "webpack-dev-server --config ./webpack.config.js  --hot --progress --colors --mode development",
     "react-native:ios": "react-native bundle --entry-file src/index.ios.js --bundle-output ios/main.jsbundle --platform ios --dev false",
     "react-native:android": "react-native bundle --entry-file src/index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --platform android --dev false",

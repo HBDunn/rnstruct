@@ -3,14 +3,15 @@
 
 <h2 align='center'>(ONE CODE BASE)</h2>
 
- **NOT react-native-web**
+  - [**NOT react-native-web**]()
 
-### **NPM CI**
- [Stop upgrading](https://docs.npmjs.com/cli/ci.html) on install that re-breaks a working code-base.
+### [**Use npm ci**]()
+   
+  - [Stop upgrading](https://docs.npmjs.com/cli/ci.html) on install that re-breaks a working code-base.
 
- ```**Use npm ci**```
+  - ```npm ci```
 
-<a name=toc>TOC **Version Date: 3/15/19**
+<a name=toc>TOC **Version Date: 3/20/19**
 =========================================
   [Speed-Up Migration](./cleaning.md)
 
