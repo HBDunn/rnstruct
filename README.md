@@ -3,12 +3,11 @@
 [![Build Status](https://travis-ci.org/HBDunn/rnstruct.svg?branch=master)](https://travis-ci.org/HBDunn/rnstruct)
 [![Dependency Status](https://david-dm.org/HBDunn/rnstruct.svg)](https://david-dm.org/HBDunn/rnstruct)
 [![devDependency Status](https://david-dm.org/HBDunn/dev-status.svg)](https://david-dm.org/HBDunn/rnstruct#info=devDependencies)
+
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/HBDunn/rnstruct/master.svg?style=flat-square)](https://codecov.io/gh/HBDunn/rnstruct/)
+[![Known Vulnerabilities](https://snyk.io/test/github/HBDunn/rnstruct/badge.svg)]](https://snyk.io/test/github/HBDunn/rnstruct)
 
-[![Known Vulnerabilities](https://snyk.io/test/github/HBDunn/rnstruct.svg?)](https://snyk.io/test/github/HBDunn/rnstruct)
-
-
-# React React-Native Webpack Babel Typescript Jest Travis CI 
+# React React-Native Webpack Babel Typescript Jest Travis CI
 # React-Native@58.4 Mobile & React Website Code-Base Share
 
 Simplify Calculator: single source code architecture to run multiple devices:
