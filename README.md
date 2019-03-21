@@ -24,49 +24,24 @@ Simplify Calculator: single source code architecture to run multiple devices:
 
  [Final Draft ScreenShots]()
 
-<<<<<<< HEAD
-## What's next
-
-Here are some thoughts about what can come next:
-
-- Make the Website App Isomorphic/Universal
-
-## Thank you Robert for your awesome design
-
-I want to thank Robert O'Dowd who kindly authorized me the reuse his very beautiful design. The original design made by Robert was part of his project called "Simplifycation" visible [here](https://dribbble.com/shots/1973851-Simplifycation).
-
-# How to build/run the projects
-=======
 | &nbsp; &nbsp; &nbsp; |   Webpage&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; Android &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; |
 |----------------------:|:--------------------------:|:--------------:|:-------------------------------------------------------:|:----------------------:|
 | &nbsp; &nbsp; &nbsp; | ![](./docs/screencapture-localhost-8083-2019-03-14-22_36_59s.png) | &nbsp; &nbsp; &nbsp; | ![](./docs/Screenshot_1552624408s.png) | &nbsp; &nbsp; &nbsp; |  
 
 ## Build/run
->>>>>>> 1904c5ef... final
 
 ### Install
 
-- `npm install` to install all the dependencies, React and React Native among others.
-
-### With some versions of npm (>=v3.3.10 <=v3.6.0)
-
-Some builds from npm included bugs while `npm install`. So if you are using a npm version within the range form 3.3.10 to 3.6.0 included, you must run `npm install` twice. Those versions including npm v3.3.12 are the ones bundled by default with node from version v5.1.0 to v5.5.0.
-
-- `npm install npm`
-- `npm install npm` run it twice, because of the packages won't be installed after the first run [#10985](https://github.com/npm/npm/issues/10985)
+- `npm ci` to install all the dependencies, React and React Native among others.
 
 ### The Mobile Apps (iOS & Android)
 
 #### Set-Up for React Native
 
-<<<<<<< HEAD
 #### iOS
-=======
-##### iOS(Not currently tested)
->>>>>>> 1904c5ef... final
 
 - OS X
-- Xcode 6.3 or higher is recommended (Xcode only runs on Mac).
+- Xcode 10.0 or higher is recommended (Xcode only runs on Mac).
 - Homebrew is the recommended way to install node, watchman, and flow.
 - `brew install node`
 - `brew install watchman`. We recommend installing watchman, otherwise you might hit a node file watching bug.
@@ -77,70 +52,8 @@ Some builds from npm included bugs while `npm install`. So if you are using a np
 - Install Android Studio & Build Tools
 - [AVD](./docs/cleaning.md#avd)
 
-#### Running the Mobile Apps
-
-##### iOS
-
-- Open iosApp.xcodeproj and hit run in Xcode.
-- Hit cmd+R in your iOS simulator to reload the app and see your change!
-
-##### Android
-
-- Open an emulator. (Genymotion or run `android avd`)
-- Run the `react-native run-android` in the root of this project.
-- If trying to run on a device, read the following guide: http://facebook.github.io/react-native/docs/running-on-device-android.html#content
-
-Congratulations! You've just successfully run the project as an iOS or Android App.
-
-## The Website App
-
-### Requirements for React
-
-There isn't any additional requirements since you already installed the deps with `npm install`.
-
-#### Quick start
-
-- `npm run build` to build the project (at least the first time)
-- `npm run serve-web` to preview in the browser at http://localhost:8000/index.web.html or http://localhost:8000/webpack-dev-server/index.web.html with webpack-dev-server and hot reload enabled
-
-Congratulations! You've just successfully run the project as a Website App.
-
-## The Desktop App
-
-You can either run the project with [NW](http://nwjs.io) or [electron](http://electron.atom.io).
-
-### Requirements for NW
-
-To run the project, you are supposed to run something like:
-
-`/path/to/nw .`
-
-On OSX, the executable binary is in a hidden directory within the .app file. The easier solution to install it is to download the app on http://nwjs.io/ then copying it to your application folder. You will now be able to run:
-
-`/Applications/nwjs.app/Contents/MacOS/nwjs .`
-
-You can also setup an alias to call the binary.
-
-`alias nw="/Applications/nwjs.app/Contents/MacOS/nwjs"`
-
-### Quick start with NW
-
-- `npm run build` to build the project (at least the first time)
-- `npm run serve-nw` to launch the desktop app and enable livereload
-
-Congratulations! You've just successfully run the project as a Desktop App.
-
-### Quick start with Electron
-
-- `npm run build` to build the project (at least the first time)
-- `npm run serve-electron` to launch the desktop app and enable livereload
-
-Congratulations! You've just successfully run the project as a Desktop App.
-
-# Run the tests
-
-To run the tests, simply run:
-
+#Tests
+- run
   ```js
     npm test
   ```
@@ -161,8 +74,7 @@ notes:
 
 ### Flux Architecture Actions/Stores
 
-The [flux](https://facebook.github.io/flux) architecture, logic and data management, is shared
-by all device builds.
+The [flux](https://facebook.github.io/flux) architecture, logic and data management, is shared by all device builds.
 
 ### Components
 
