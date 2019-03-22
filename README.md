@@ -1,4 +1,4 @@
-#Version Date **3/20/2019**
+# Version Date **3/21/2019**
 
 [![Build Status](https://travis-ci.org/HBDunn/rnstruct.svg?branch=master)](https://travis-ci.org/HBDunn/rnstruct)
 [![Dependency Status](https://david-dm.org/HBDunn/rnstruct.svg)](https://david-dm.org/HBDunn/rnstruct)
@@ -8,7 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/HBDunn/rnstruct/badge.svg)](https://snyk.io/test/github/HBDunn/rnstruct)
 
 # React React-Native Webpack Babel Typescript Jest Travis CI
-##**[Migration & Debug Details](./docs/workup.md)** from Javascript React-Native 0.21]
+## **[Migration & Debug Details](./docs/workup.md)** from Javascript React-Native 0.21
 # React-Native@58.4 Mobile & React Website Code-Base Share
 
 Simplify Calculator: single source code architecture to run multiple devices:
