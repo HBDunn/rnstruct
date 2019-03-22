@@ -52,7 +52,7 @@ Simplify Calculator: single source code architecture to run multiple devices:
 - Install Android Studio & Build Tools
 - [AVD](./docs/cleaning.md#avd)
 
-#Tests
+# Tests
 - run
   ```js
     npm test
@@ -61,7 +61,7 @@ Simplify Calculator: single source code architecture to run multiple devices:
 
   ![Test](./docs/test--verbose.png "Test")
 
-##Application Code Structure with Flux(simple Redux) Store
+## Application Code Structure with Flux(simple Redux) Store
 
 Single source code is all contained in the `src` directory
 
