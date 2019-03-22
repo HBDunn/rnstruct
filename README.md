@@ -5,6 +5,7 @@
 
 [![devDependencies Status](https://david-dm.org/HBDunn/rnstruct/dev-status.svg)](https://david-dm.org/HBDunn/rnstruct?type=dev)
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/HBDunn/rnstruct/master.svg)](https://codecov.io/gh/HBDunn/rnstruct/)
+
 [![Known Vulnerabilities](https://snyk.io/test/github/HBDunn/rnstruct/badge.svg)](https://snyk.io/test/github/HBDunn/rnstruct)
 
 # React React-Native Webpack Babel Typescript Jest Travis CI
