@@ -14,7 +14,9 @@
     "build:web": "webpack --config ./webpack.config.js --progress --colors --mode production",
     "travis:android": "npm run react-native:android && npm test",
     "travis:ios": "npm run react-native:ios && npm test",
-    "travis:web": "npm run build:web && npm test"
+    "travis:web": "npm run build:web && npm test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -45,7 +47,8 @@
     "react-native": "0.58.4",
     "react-native-uuid": "^1.4.9",
     "upath": "^1.1.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -95,6 +98,7 @@
       "json",
       "node"
     ],
-    "collectCoverage":true
-  }
+    "collectCoverage": true
+  },
+  "snyk": true
 }
